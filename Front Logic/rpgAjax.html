@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<html>
+<head>
+<title> jony cieri </title>
+    
+<script type="text/javascript">
+    
+    function resalta(elEvento) {
+        var evento = elEvento || window.event;
+        switch(evento.type) {
+            case 'mouseover':
+              this.style.borderColor = 'black';
+              break;
+            case 'mouseout':
+              this.style.borderColor = 'red';
+              break;
+        }
+    }
+    
+    x= 10; //Left
+    y= 10; //Top
+    
+    function moverJoni(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        // up arrow
+        y-= 5;  
+        document.getElementById("joni").style.top= String(y) + "px";
+    }
+    else if (e.keyCode == '40') {
+        // down arrow
+        y+= 5;  
+        document.getElementById("joni").style.top= String(y) + "px";
+    }
+    else if (e.keyCode == '37') {
+       // left arrow
+       x-= 5;  
+       document.getElementById("joni").style.left= String(x) + "px";
+    }
+    else if (e.keyCode == '39') {
+       // right arrow
+       x+= 5;  
+       document.getElementById("joni").style.left= String(x) + "px";
+    }
+
+    }
+    
+    window.onload = function() {
+        
+      document.getElementById("seccion").onmouseover = resalta;
+      document.getElementById("seccion").onmouseout = resalta;
+        
+      document.onkeydown= moverJoni;
+        
+      document.onkeypress = manejador;
+      document.onclick = mover;
+    }
+    
+    function manejador(elEvento) {
+        var evento = elEvento || window.event;
+        var caracter = evento.charCode || evento.keyCode;
+        alert("El carácter pulsado es: " + String.fromCharCode(caracter));
+    }
+
+    function mover(elEvento) {
+      var evento = elEvento || window.event;
+      var coordenadaX = evento.clientX;
+      var coordenadaY = evento.clientY;
+      alert("Has pulsado el ratón en la posición: " + coordenadaX + ", " + coordenadaY);
+    }
+    
+</script>
+    
+</head>
+<body bgcolor="white">
+
+<img id="joni" src="images/5FE.png" width="278" height="280" style="position: relative;">
+    
+<div id="seccion" style="width:150px; height:60px; border:thin solid silver">
+  Seccion de contenidos...
+</div>
+    
+</body></html>
