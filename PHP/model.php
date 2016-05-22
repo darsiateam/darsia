@@ -2,7 +2,7 @@
 // model.php
 function open_database_connection()
 {
-    $link = new PDO("mysql:host=localhost;dbname=blog_db", 'root', 'asd');
+    $link = new PDO("mysql:host=localhost;dbname=test", 'root', 'asd');
 
     return $link;
 }
