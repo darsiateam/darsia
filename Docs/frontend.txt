@@ -1,0 +1,35 @@
+
+Foto Perfil - Click - Abre Perfil (Character)- imgProfile
+
+Inventario - Click - Abre Inventario (Inventario)- inventary
+Mapa Mundial - Click - Abre Mapa Mundial (Mapa mundial) - mundialMap
+Chat Completo - Click - Abre Chat completo (Chat completo) - historyChat
+
+Trade - Click - Envia solicitud de trade y Abre Menú de Trade (Trade) - peopleTrade
+Party - Click - Envia solicitud de party - peopleParty
+Attack - Click - Comienza la batalla - peopleAttack
+Whisp - Click - Abre Chat completo en modo privado - peopleWhisp
+
+Attack - Click - Comienza la batalla - monsterAttack
+
+Trade - Click - Envia solicitud de trade y Abre Menú de Trade (Trade) - npcTrade
+Hablar - Click - Abre Chat completo en modo npc - npcAttack
+
+Agarrar - Click - Se agrega el objeto a tu inventario - itemPickup
+
+Enviar - Click - Se envia lo que escribiste - sendChat
+
+
+
+Flecha Arriba - Click, tecla flecha arriba - Moverse arriba - moveUp
+Flecha Abajo - Click, tecla flecha abajo - Moverse abajo - moveDown
+Flecha Izquierda - Click, tecla flecha izquierda - Moverse izquierda - moveLeft
+Flecha Derecha - Click, tecla flecha derecha - Moverse derecha - moveRight
+Habilidad 1 - Click, tecla q - Ejecutar habilidad 1 - ability1
+Habilidad 2 - Click, tecla w - Ejecutar habilidad 2 - ability2
+Habilidad 3 - Click, tecla e - Ejecutar habilidad 3 - ability3
+Habilidad 4 - Click, tecla r - Ejecutar habilidad 4 - ability4
+Habilidad 5 - Click, tecla t - Ejecutar habilidad 5 - ability5
+Item 1 - Click,  tecla 1 - Activar item 1 - item1
+Item 2 - Click,  tecla 2 - Activar item 2 - item2
+Item 3 - Click,  tecla 3 - Activar item 3 - item3
