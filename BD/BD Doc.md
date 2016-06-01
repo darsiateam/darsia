@@ -22,3 +22,4 @@ Item.type: Determina que tipo de item es y quien lo puede usar
 	- 103: Enano
 	- 104: No Muerto
 Class.eqItemType: Es otra tabla que va a tener que clase puede usar que tipos de items
+rRaceSpec.fitness: Es un float que determina en que porcentaje es mejor o peor una raza con respecto a un arbol de habilidades
