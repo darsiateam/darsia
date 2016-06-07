@@ -1,0 +1,5 @@
+h = hud
+m = menu
+
+hud : menu o pagina principal.
+menu : pop up o ventana emergente al accionar un boton.
