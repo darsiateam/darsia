@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Rpjtitle" table="rPjTitle">
+    <indexes>
+      <index name="FK_rPjTitle_Pj" columns="idPj"/>
+      <index name="FK_rPjTitle_Title" columns="idTitle"/>
+    </indexes>
+    <id name="idrpjtitle" type="integer" column="idRPjTitle">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <many-to-one field="idtitle" target-entity="Title" fetch="LAZY">
+      <join-columns>
+        <join-column name="idTitle" referenced-column-name="idTitle"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idpj" target-entity="Pj" fetch="LAZY">
+      <join-columns>
+        <join-column name="idPj" referenced-column-name="idPj"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

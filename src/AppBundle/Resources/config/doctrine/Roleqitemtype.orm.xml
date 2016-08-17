@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Roleqitemtype" table="RolEqItemType">
+    <id name="ideqitemtype" association-key="true"/>
+    <field name="eqitemtype" type="integer" column="eqItemType" nullable="false">
+      <options>
+        <option name="unsigned">1</option>
+      </options>
+    </field>
+    <one-to-one field="ideqitemtype" target-entity="Rol" fetch="LAZY">
+      <join-columns>
+        <join-column name="idEqItemType" referenced-column-name="idRol"/>
+      </join-columns>
+    </one-to-one>
+  </entity>
+</doctrine-mapping>

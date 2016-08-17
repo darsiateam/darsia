@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Rnpcstat" table="rNPCStat">
+    <indexes>
+      <index name="FK_rNPCStat_NPC" columns="idNPC"/>
+      <index name="FK_rNPCStat_Stat" columns="idStat"/>
+    </indexes>
+    <id name="idrnpcstat" type="integer" column="idRNPCStat">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <many-to-one field="idstat" target-entity="Stat" fetch="LAZY">
+      <join-columns>
+        <join-column name="idStat" referenced-column-name="idStat"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idnpc" target-entity="Npc" fetch="LAZY">
+      <join-columns>
+        <join-column name="idNPC" referenced-column-name="idNPC"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

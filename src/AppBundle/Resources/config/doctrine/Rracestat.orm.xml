@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Rracestat" table="rRaceStat">
+    <indexes>
+      <index name="FK_rRaceStat_Stat" columns="idStat"/>
+      <index name="FK_rRaceStat_Race" columns="idRace"/>
+    </indexes>
+    <id name="idrracestat" type="integer" column="idRRaceStat">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <many-to-one field="idrace" target-entity="Race" fetch="LAZY">
+      <join-columns>
+        <join-column name="idRace" referenced-column-name="idRace"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idstat" target-entity="Stat" fetch="LAZY">
+      <join-columns>
+        <join-column name="idStat" referenced-column-name="idStat"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Rmapspot" table="rMapSpot">
+    <indexes>
+      <index name="FK_rMapSpot_Map" columns="idMap"/>
+      <index name="FK_rMapSpot_Spot" columns="idSpot"/>
+    </indexes>
+    <id name="idrmapspot" type="integer" column="idRMapSpot">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <many-to-one field="idspot" target-entity="Spot" fetch="LAZY">
+      <join-columns>
+        <join-column name="idSpot" referenced-column-name="idSpot"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idmap" target-entity="Map" fetch="LAZY">
+      <join-columns>
+        <join-column name="idMap" referenced-column-name="idMap"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

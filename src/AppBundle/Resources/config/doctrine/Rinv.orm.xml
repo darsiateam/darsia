@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Rinv" table="rInv">
+    <indexes>
+      <index name="FK_rInv_Pj" columns="idPj"/>
+      <index name="FK_rInv_Item" columns="idItem"/>
+    </indexes>
+    <id name="idrinv" type="integer" column="idRInv">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="isequip" type="boolean" column="isEquip" nullable="false"/>
+    <field name="quantity" type="integer" column="quantity" nullable="false">
+      <options>
+        <option name="unsigned">1</option>
+      </options>
+    </field>
+    <many-to-one field="iditem" target-entity="Item" fetch="LAZY">
+      <join-columns>
+        <join-column name="idItem" referenced-column-name="idItem"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idpj" target-entity="Pj" fetch="LAZY">
+      <join-columns>
+        <join-column name="idPj" referenced-column-name="idPj"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Rspotmap" table="rSpotMap">
+    <indexes>
+      <index name="FK_rSpotMap_Map" columns="idMap"/>
+      <index name="FK_rSpotMap_Spot" columns="idSpot"/>
+      <index name="FK_rSpotMap_City" columns="cityReq"/>
+      <index name="FK_rSpotMap_NewMapSpot" columns="idNewMapSpot"/>
+    </indexes>
+    <id name="idrspotmap" type="integer" column="idRSpotMap">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="lvlreq" type="integer" column="lvlReq" nullable="false">
+      <options>
+        <option name="unsigned">1</option>
+      </options>
+    </field>
+    <field name="doorname" type="string" column="doorName" length="25" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="titlereq" type="integer" column="titleReq" nullable="true">
+      <options>
+        <option name="unsigned">1</option>
+      </options>
+    </field>
+    <many-to-one field="idnewmapspot" target-entity="Spot" fetch="LAZY">
+      <join-columns>
+        <join-column name="idNewMapSpot" referenced-column-name="idSpot"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="cityreq" target-entity="City" fetch="LAZY">
+      <join-columns>
+        <join-column name="cityReq" referenced-column-name="idCity"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idspot" target-entity="Spot" fetch="LAZY">
+      <join-columns>
+        <join-column name="idSpot" referenced-column-name="idSpot"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idmap" target-entity="Map" fetch="LAZY">
+      <join-columns>
+        <join-column name="idMap" referenced-column-name="idMap"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

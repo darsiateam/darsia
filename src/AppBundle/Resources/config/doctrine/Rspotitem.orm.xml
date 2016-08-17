@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Rspotitem" table="rSpotItem">
+    <indexes>
+      <index name="FK_rSpotItem_Item" columns="idItem"/>
+      <index name="FK_rSpotItem_Spot" columns="idSpot"/>
+    </indexes>
+    <id name="idrspotitem" type="integer" column="idRSpotItem">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="quantity" type="integer" column="quantity" nullable="false">
+      <options>
+        <option name="unsigned">1</option>
+      </options>
+    </field>
+    <many-to-one field="idspot" target-entity="Spot" fetch="LAZY">
+      <join-columns>
+        <join-column name="idSpot" referenced-column-name="idSpot"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="iditem" target-entity="Item" fetch="LAZY">
+      <join-columns>
+        <join-column name="idItem" referenced-column-name="idItem"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

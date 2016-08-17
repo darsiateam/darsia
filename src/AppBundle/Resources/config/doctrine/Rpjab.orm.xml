@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Rpjab" table="rPjAb">
+    <indexes>
+      <index name="FK_rPjAb_Pj" columns="idPj"/>
+      <index name="FK_rPjAb_Ability" columns="idAbility"/>
+    </indexes>
+    <id name="idrpjab" type="integer" column="idRPjAb">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="isavailable" type="boolean" column="isAvailable" nullable="false"/>
+    <many-to-one field="idability" target-entity="Ability" fetch="LAZY">
+      <join-columns>
+        <join-column name="idAbility" referenced-column-name="idAbility"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idpj" target-entity="Pj" fetch="LAZY">
+      <join-columns>
+        <join-column name="idPj" referenced-column-name="idPj"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

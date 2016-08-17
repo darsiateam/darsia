@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Rabstat" table="rAbStat">
+    <indexes>
+      <index name="FK_rAbStat_Ability" columns="idAbility"/>
+      <index name="FK_rAbStat_Stat" columns="idStat"/>
+    </indexes>
+    <id name="idrabstat" type="integer" column="idRAbStat">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <many-to-one field="idstat" target-entity="Stat" fetch="LAZY">
+      <join-columns>
+        <join-column name="idStat" referenced-column-name="idStat"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idability" target-entity="Ability" fetch="LAZY">
+      <join-columns>
+        <join-column name="idAbility" referenced-column-name="idAbility"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

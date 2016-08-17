@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Stat" table="Stat">
+    <id name="idstat" type="integer" column="idStat">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="ad" type="integer" column="AD" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="ap" type="integer" column="AP" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="dge" type="float" column="Dge" precision="4" scale="2" nullable="false"/>
+    <field name="hp" type="integer" column="HP" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="mp" type="integer" column="MP" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="mr" type="integer" column="MR" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="dr" type="integer" column="DR" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="ats" type="float" column="AtS" precision="4" scale="2" nullable="false"/>
+    <field name="weight" type="integer" column="weight" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="crit" type="float" column="crit" precision="4" scale="2" nullable="false"/>
+    <field name="critical" type="float" column="critical" precision="4" scale="2" nullable="false"/>
+    <field name="mpreg" type="float" column="MPReg" precision="4" scale="2" nullable="false"/>
+    <field name="hpreg" type="float" column="HPReg" precision="4" scale="2" nullable="false"/>
+    <field name="charm" type="integer" column="charm" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="reflect" type="float" column="reflect" precision="4" scale="2" nullable="false"/>
+    <field name="stun" type="float" column="stun" precision="4" scale="2" nullable="false"/>
+    <field name="sky" type="float" column="sky" precision="4" scale="2" nullable="false"/>
+    <field name="ocean" type="float" column="ocean" precision="4" scale="2" nullable="false"/>
+    <field name="continent" type="float" column="continent" precision="4" scale="2" nullable="false"/>
+    <field name="ms" type="float" column="MS" precision="4" scale="2" nullable="false"/>
+    <field name="ls" type="float" column="LS" precision="4" scale="2" nullable="false"/>
+    <field name="poison" type="float" column="poison" precision="4" scale="2" nullable="false"/>
+    <field name="ressky" type="float" column="resSky" precision="4" scale="2" nullable="false"/>
+    <field name="resocean" type="float" column="resOcean" precision="4" scale="2" nullable="false"/>
+    <field name="rescontinent" type="float" column="resContinent" precision="4" scale="2" nullable="false"/>
+    <field name="resstun" type="float" column="resStun" precision="4" scale="2" nullable="false"/>
+    <field name="respoison" type="float" column="resPoison" precision="4" scale="2" nullable="false"/>
+  </entity>
+</doctrine-mapping>

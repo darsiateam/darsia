@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Rcitymap" table="rCityMap">
+    <indexes>
+      <index name="FK_rCityMap_Map" columns="idMap"/>
+      <index name="FK_rCityMap_City" columns="idCity"/>
+    </indexes>
+    <id name="idrcitymap" type="integer" column="idRCityMap">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <many-to-one field="idcity" target-entity="City" fetch="LAZY">
+      <join-columns>
+        <join-column name="idCity" referenced-column-name="idCity"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idmap" target-entity="Map" fetch="LAZY">
+      <join-columns>
+        <join-column name="idMap" referenced-column-name="idMap"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Rracespec" table="rRaceSpec">
+    <indexes>
+      <index name="FK_rRaceSpec_Spec" columns="idSpeciality"/>
+      <index name="FK_rRaceSpec_Race" columns="idRace"/>
+    </indexes>
+    <id name="idrracespec" type="integer" column="idRRaceSpec">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="fitness" type="float" column="fitness" precision="4" scale="2" nullable="false"/>
+    <many-to-one field="idrace" target-entity="Race" fetch="LAZY">
+      <join-columns>
+        <join-column name="idRace" referenced-column-name="idRace"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idspeciality" target-entity="Speciality" fetch="LAZY">
+      <join-columns>
+        <join-column name="idSpeciality" referenced-column-name="idSpeciality"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
